@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Card, Button, Alert } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../Context/AuthContext";
 
 export default function Dashboard() {
   const [error, setError] = useState("");

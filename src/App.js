@@ -1,14 +1,14 @@
 import React from "react";
-import SignUp from "./SignUp";
-import Dashboard from "./Dashboard";
-import Login from "./Login";
-import UpdateProfile from "./UpdateProfile";
-import ForgotPassword from "./ForgotPassword";
+import SignUp from "./Pages/SignUp";
+import Dashboard from "./Pages/Dashboard";
+import Login from "./Pages/Login";
+import UpdateProfile from "./Pages/UpdateProfile";
+import ForgotPassword from "./Pages/ForgotPassword";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
-import { AuthProvider } from "../context/AuthContext";
+import { AuthProvider } from "./Context/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import PrivateRoute from "./PrivateRoute";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 export default function App() {
   return (
