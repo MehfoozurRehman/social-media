@@ -147,6 +147,22 @@
   border-bottom: 1px solid lighten($third, 50%);
   margin-bottom: 1em;
   align-items: center;
+  justify-content: space-between;
+}
+.chat__screen__header__left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.chat__screen__header__right {
+  border: none;
+  background-color: $third;
+  padding: 0.5em 1em;
+  color: white;
+  border-radius: 5px;
+}
+.chat__screen__header__right:hover {
+  background-color: $secondary;
 }
 .chat__screen__heading {
   font-size: 1rem;
