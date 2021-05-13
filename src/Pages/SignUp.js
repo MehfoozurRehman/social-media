@@ -1,7 +1,9 @@
 import React, { useRef, useState } from "react";
-import { Card, Form, Button, Alert } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 import { useAuth } from "../Context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import bg__img from "../Assets/bg__img.png";
+import "./SignUp.scss";
 
 export default function SignUp() {
   const emailRef = useRef();
@@ -23,40 +25,64 @@ export default function SignUp() {
       setError("");
       setLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      history.push("/dashboard");
     } catch {
       setError("Failed to create an account");
     }
     setLoading(false);
   }
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Pssword Confirmation</Form.Label>
-              <Form.Control type="password" ref={passwordConfirmRef} required />
-            </Form.Group>
-            <Button type="submit" className="w-100" disabled={loading}>
-              Sign Up
-            </Button>
-          </Form>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/login">Log In</Link>
-      </div>
-    </>
+    <div className="login">
+      <img src={bg__img} alt="login__img" className="login__img" />
+      <form onSubmit={handleSubmit} className="login__form">
+        <div className="home__heading">Create Account</div>
+        <div className="home__sub__heading">
+          Create a new account to start chatting
+        </div>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <div className="input__box">
+          <label htmlFor="Email Address" className="input__label">
+            Email Address
+          </label>
+          <input
+            className="input__field"
+            id="Email Address"
+            type="email"
+            ref={emailRef}
+            required
+          />
+        </div>
+        <div className="input__box">
+          <label htmlFor="Password" className="input__label">
+            Password
+          </label>
+          <input
+            className="input__field"
+            id="Password"
+            type="password"
+            ref={passwordRef}
+            required
+          />
+        </div>
+        <div className="input__box">
+          <label htmlFor="Pssword Confirmation" className="input__label">
+            Pssword Confirmation
+          </label>
+          <input
+            className="input__field"
+            id="Pssword Confirmation"
+            type="password"
+            ref={passwordConfirmRef}
+            required
+          />
+        </div>
+        <button type="submit" disabled={loading} className="btn primary">
+          Sign Up
+        </button>
+        <div className="home__sub__heading">
+          Already have an account! <Link to="/login">click here</Link>
+        </div>
+      </form>
+    </div>
   );
 }

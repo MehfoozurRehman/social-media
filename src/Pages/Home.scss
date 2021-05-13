@@ -1,0 +1,90 @@
+@import "../App.scss";
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 6em 5em;
+}
+.home__heading {
+  font-size: 2rem;
+  margin-bottom: 1em;
+  font-weight: 600;
+  color: $third;
+  text-align: center;
+}
+.home__sub__heading {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  color: $third;
+  text-align: center;
+}
+.home__cta {
+  margin: 3em 0em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+.btn {
+  width: 45%;
+  font-size: 1rem;
+  padding: 0.8em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  color: $primary;
+  margin-bottom: 1em;
+  text-align: center;
+  text-decoration: none;
+}
+.primary {
+  background-color: $secondary;
+}
+.primary:hover {
+  background-color: darken($secondary, 10%);
+}
+.secondary {
+  background-color: $third;
+}
+.secondary:hover {
+  background-color: darken($third, 10%);
+}
+.home__features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home__features__card {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  background-color: $third;
+  margin: 1em;
+  border-radius: 8px;
+}
+.home__features__card__heading {
+  margin-bottom: 1em;
+  font-size: 1.2rem;
+  color: $primary;
+}
+.home__features__card__info {
+  color: $primary;
+  font-size: 0.8rem;
+  text-align: justify;
+}
+@media (max-width: 700px) {
+  .home__cta {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+  }
+  .home__features {
+    flex-direction: column;
+  }
+}

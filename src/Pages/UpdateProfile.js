@@ -28,7 +28,7 @@ export default function UpdateProfile() {
     }
     Promise.all(promises)
       .then(() => {
-        history.push("/");
+        history.push("/dashboard");
       })
       .catch(() => {
         setError("Failed to update account");
@@ -77,7 +77,7 @@ export default function UpdateProfile() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/">Cancel</Link>
+        <Link to="/dashboard">Cancel</Link>
       </div>
     </>
   );
