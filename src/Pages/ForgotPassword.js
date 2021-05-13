@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../Context/AuthContext";
 import { Link } from "react-router-dom";
+import bg__img from "../Assets/bg__img.png";
 
 export default function FrogotPassowrd() {
   const emailRef = useRef();
@@ -25,29 +26,31 @@ export default function FrogotPassowrd() {
     setLoading(false);
   }
   return (
-    <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Password Reset</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
-          {message && <Alert variant="success">{message}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Button type="submit" className="w-100" disabled={loading}>
-              Reset Password
-            </Button>
-          </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
-          </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
-      </div>
-    </>
+    <div className="login">
+      <form onSubmit={handleSubmit} className="login__form">
+        <div className="home__heading">Forgot Password</div>
+        {error && <Alert variant="danger">{error}</Alert>}
+        {message && <Alert variant="success">{message}</Alert>}
+        <div className="input__box">
+          <label htmlFor="Email Address" className="input__label">
+            Email Address
+          </label>
+          <input
+            className="input__field"
+            id="Email Address"
+            type="email"
+            ref={emailRef}
+            required
+          />
+        </div>
+        <button type="submit" disabled={loading} className="btn primary">
+          Reset Password
+        </button>
+        <div className="home__sub__heading">
+          Need a new account <Link to="/signup">click here</Link>
+        </div>
+      </form>
+      <img src={bg__img} alt="login__img" className="login__img" />
+    </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Home() {
         A great place to share your thoughts with friends
       </div>
       <div className="home__cta">
-        <Link to="/register" className="btn primary">
+        <Link to="/signup" className="btn primary">
           Create New Account
         </Link>
         <Link to="/login" className="btn secondary">
