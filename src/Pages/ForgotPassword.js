@@ -36,7 +36,6 @@ export default function FrogotPassowrd() {
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
-
             <Button type="submit" className="w-100" disabled={loading}>
               Reset Password
             </Button>
