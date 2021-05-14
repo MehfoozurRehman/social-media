@@ -39,9 +39,9 @@ export default function UpdateProfile() {
       });
   }
   return (
-    <div className="login">
-      <img src={bg__img} alt="login__img" className="login__img" />
-      <form onSubmit={handleSubmit} className="login__form">
+    <div className="auth">
+      <img src={bg__img} alt="auth__img" className="auth__img" />
+      <form onSubmit={handleSubmit} className="auth__form">
         <div className="home__heading">Update Profile</div>
         {error && <Alert variant="danger">{error}</Alert>}
         <div className="input__box">

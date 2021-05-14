@@ -26,8 +26,8 @@ export default function FrogotPassowrd() {
     setLoading(false);
   }
   return (
-    <div className="login">
-      <form onSubmit={handleSubmit} className="login__form">
+    <div className="auth">
+      <form onSubmit={handleSubmit} className="auth__form">
         <div className="home__heading">Forgot Password</div>
         {error && <Alert variant="danger">{error}</Alert>}
         {message && <Alert variant="success">{message}</Alert>}
@@ -50,7 +50,7 @@ export default function FrogotPassowrd() {
           Need a new account <Link to="/signup">click here</Link>
         </div>
       </form>
-      <img src={bg__img} alt="login__img" className="login__img" />
+      <img src={bg__img} alt="auth__img" className="auth__img" />
     </div>
   );
 }

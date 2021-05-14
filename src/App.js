@@ -5,7 +5,6 @@ import Login from "./Pages/Login";
 import UpdateProfile from "./Pages/UpdateProfile";
 import ForgotPassword from "./Pages/ForgotPassword";
 import Home from "./Pages/Home";
-import Chat from "./Pages/Chat";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { AuthProvider } from "./Context/AuthContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

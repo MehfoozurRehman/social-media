@@ -2,6 +2,15 @@ import React from "react";
 import "./Home.scss";
 import { Link } from "react-router-dom";
 
+function FeatureCard({ heading, info }) {
+  return (
+    <div className="home__features__card">
+      <div className="home__features__card__heading">{heading}</div>
+      <div className="home__features__card__info">{info}</div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="home">
@@ -19,50 +28,32 @@ export default function Home() {
       </div>
       <div className="home__sub__heading">Features</div>
       <div className="home__features">
-        <div className="home__features__card">
-          <div className="home__features__card__heading">Fast</div>
-          <div className="home__features__card__info">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-          </div>
-        </div>
-        <div className="home__features__card">
-          <div className="home__features__card__heading">Fast</div>
-          <div className="home__features__card__info">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-          </div>
-        </div>
-        <div className="home__features__card">
-          <div className="home__features__card__heading">Fast</div>
-          <div className="home__features__card__info">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-          </div>
-        </div>
-        <div className="home__features__card">
-          <div className="home__features__card__heading">Fast</div>
-          <div className="home__features__card__info">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-            et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-          </div>
-        </div>
+        <FeatureCard
+          heading="fast"
+          info="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea taki"
+        />
+        <FeatureCard
+          heading="fast"
+          info="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stetc"
+        />
+        <FeatureCard
+          heading="fast"
+          info="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+        clita kasd gubergren, no sea takimata san"
+        />
+        <FeatureCard
+          heading="fast"
+          info="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"
+        />
       </div>
     </div>
   );

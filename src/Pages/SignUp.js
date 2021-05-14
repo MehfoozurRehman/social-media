@@ -32,9 +32,9 @@ export default function SignUp() {
     setLoading(false);
   }
   return (
-    <div className="login">
-      <img src={bg__img} alt="login__img" className="login__img" />
-      <form onSubmit={handleSubmit} className="login__form">
+    <div className="auth">
+      <img src={bg__img} alt="auth__img" className="auth__img" />
+      <form onSubmit={handleSubmit} className="auth__form">
         <div className="home__heading">Create Account</div>
         <div className="home__sub__heading">
           Create a new account to start chatting
