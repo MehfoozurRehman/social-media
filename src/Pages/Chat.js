@@ -6,6 +6,26 @@ import OtherMessage from "../Components/OtherMessage";
 import UserMessage from "../Components/UserMessage";
 import "./Chat.scss";
 import imgURL from "../Assets/user__img.png";
+import Picker from "emoji-picker-react";
+
+// function EmojiPicker() {
+//   const [chosenEmoji, setChosenEmoji] = useState(null);
+
+//   const onEmojiClick = (event, emojiObject) => {
+//     setChosenEmoji(emojiObject);
+//   };
+
+//   return (
+//     <div>
+//       {chosenEmoji ? (
+//         <span>You chose: {chosenEmoji.emoji}</span>
+//       ) : (
+//         <span>No emoji Chosen</span>
+//       )}
+//       <Picker onEmojiClick={onEmojiClick} />
+//     </div>
+//   );
+// }
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -21,6 +41,11 @@ export default function Dashboard() {
       setError("Failed to Logout");
     }
   }
+  const [chosenEmoji, setChosenEmoji] = useState(null);
+
+  const onEmojiClick = (event, emojiObject) => {
+    setChosenEmoji(emojiObject);
+  };
   return (
     <div className="chat">
       <div className="chat__panel">
@@ -108,76 +133,95 @@ export default function Dashboard() {
         <div className="chat__screen__messages">
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
+            imgURL={imgURL}
+          />
+          <UserMessage data="Awesome" timeStamp="7:47 PM" />
+          <OtherMessage
+            data="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit hic quibusdam voluptas ducimus ad nemo optio, qui sequi culpa, unde corrupti necessitatibus? Placeat fuga ex labore incidunt veniam laudantium!"
+            name="Michael Wong"
+            timeStamp={Date()}
+            imgURL={imgURL}
+          />
+
+          <UserMessage
+            data="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit hic quibusdam voluptas ducimus ad nemo optio, qui sequi culpa, unde corrupti necessitatibus? Placeat fuga ex labore incidunt veniam laudantium!"
+            timeStamp="7:47 PM"
+          />
+          <OtherMessage
+            data="I agree! It definitely produces a better user experience."
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
-          <UserMessage data="Awesome" timeStamp="7:47 PM" />
+          <UserMessage data="Awesome" timeStamp={Date()} />
           <OtherMessage
             data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
+            name="Michael Wong"
+            timeStamp={Date()}
             imgURL={imgURL}
           />
-          <UserMessage data="Awesome" timeStamp="7:47 PM" />
-          <OtherMessage
-            data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
-            imgURL={imgURL}
+          <UserMessage
+            data={chosenEmoji && chosenEmoji.emoji}
+            timeStamp={Date()}
           />
-          <UserMessage data="Awesome" timeStamp="7:47 PM" />
-          <OtherMessage
-            data="I agree! It definitely produces a better user experience."
-            timeStamp="Michael Wong, 7:46 PM"
-            imgURL={imgURL}
-          />
-          <UserMessage data="Awesome" timeStamp="7:47 PM" />
         </div>
         <div className="chat__screen__messages__input">
           <div className="chat__screen__messages__input__field">
@@ -198,7 +242,17 @@ export default function Dashboard() {
                 />
               </svg>
             </button>
-            <button>
+            <button
+              className="emoji__picker__btn"
+              onClick={() => {
+                var x = document.querySelector(".emoji__picker");
+                if (x.style.display === "none") {
+                  x.style.display = "flex";
+                } else {
+                  x.style.display = "none";
+                }
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 19.367 19.366"
@@ -238,6 +292,9 @@ export default function Dashboard() {
                   />
                 </g>
               </svg>
+              <div className="emoji__picker">
+                <Picker onEmojiClick={onEmojiClick} />
+              </div>
             </button>
           </div>
         </div>
