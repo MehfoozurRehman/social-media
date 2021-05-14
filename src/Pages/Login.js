@@ -59,12 +59,11 @@ export default function Login() {
             required
           />
         </div>
+        <Link to="/forgot-password">Forgot Password</Link>
         <button type="submit" disabled={loading} className="btn primary">
           Sign In
         </button>
-        <div className="home__sub__heading">
-          <Link to="/forgot-password">Forgot Password</Link>
-        </div>
+
         <div className="home__sub__heading">
           Sign in into an existing account <Link to="/signup">click here</Link>
         </div>
