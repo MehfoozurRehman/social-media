@@ -1,6 +1,6 @@
 import React from "react";
 import SignUp from "./Pages/SignUp";
-import Dashboard from "./Pages/Dashboard";
+import Chat from "./Pages/Chat";
 import Login from "./Pages/Login";
 import UpdateProfile from "./Pages/UpdateProfile";
 import ForgotPassword from "./Pages/ForgotPassword";
@@ -17,7 +17,7 @@ export default function App() {
       <AuthProvider>
         <Switch>
           <Route exact path="/" component={Home} />
-          <PrivateRoute path="/dashboard" component={Dashboard} />
+          <PrivateRoute path="/chat" component={Chat} />
           <PrivateRoute path="/update-profile" component={UpdateProfile} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
