@@ -74,9 +74,11 @@
   max-width: 22%;
 }
 .home__features__card__heading {
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
   font-size: 1.2rem;
   color: $primary;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 .home__features__card__info {
   color: $primary;

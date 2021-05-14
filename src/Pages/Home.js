@@ -36,20 +36,20 @@ export default function Home() {
         clita kasd gubergren, no sea taki"
         />
         <FeatureCard
-          heading="fast"
+          heading="secure"
           info="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stetc"
         />
         <FeatureCard
-          heading="fast"
+          heading="privacy"
           info="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
         clita kasd gubergren, no sea takimata san"
         />
         <FeatureCard
-          heading="fast"
+          heading="simple"
           info="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
         voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet"

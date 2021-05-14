@@ -7,6 +7,7 @@ import UserMessage from "../Components/UserMessage";
 import "./Chat.scss";
 import imgURL from "../Assets/user__img.png";
 import Picker from "emoji-picker-react";
+import useOnlineStatus from "@rehooks/online-status";
 
 // function EmojiPicker() {
 //   const [chosenEmoji, setChosenEmoji] = useState(null);
@@ -27,6 +28,88 @@ import Picker from "emoji-picker-react";
 //   );
 // }
 
+function ChatPanelGroup({ onlineStatus }) {
+  return (
+    <div className="chat__panel__group__entry">
+      <div className="chat__panel__group__entry__left">
+        <div className="chat__panel__group__entry__logo">
+          <div className="chat__panel__group__entry__badge">3</div>
+          <img
+            src={imgURL}
+            alt="chat__panel__group__entry__icon"
+            className="chat__panel__group__entry__icon"
+          />
+          <div className="chat__panel__group__entry__status">
+            <div
+              className={
+                onlineStatus ? "user__status__online" : "user__status__offline"
+              }
+            ></div>
+          </div>
+        </div>
+        <div className="chat__panel__group__entry__content">
+          <div className="chat__panel__group__entry__content__name">
+            Michal Wong
+          </div>
+          <div className="chat__panel__group__entry__content__last__msg">
+            Yeah, we all loved it!
+          </div>
+        </div>
+      </div>
+      <div className="chat__panel__group__entry__info">
+        <button className="chat__panel__group__entry__info__edit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="21"
+            height="5"
+            viewBox="0 0 21 5"
+          >
+            <g
+              id="Group_61"
+              data-name="Group 61"
+              transform="translate(-623 -266)"
+            >
+              <circle
+                id="Ellipse_3"
+                data-name="Ellipse 3"
+                cx="2.5"
+                cy="2.5"
+                r="2.5"
+                transform="translate(623 266)"
+                fill="currentColor"
+              />
+              <circle
+                id="Ellipse_3-2"
+                data-name="Ellipse 3"
+                cx="2.5"
+                cy="2.5"
+                r="2.5"
+                transform="translate(631 266)"
+                fill="currentColor"
+              />
+              <circle
+                id="Ellipse_3-3"
+                data-name="Ellipse 3"
+                cx="2.5"
+                cy="2.5"
+                r="2.5"
+                transform="translate(639 266)"
+                fill="currentColor"
+              />
+            </g>
+          </svg>
+          <div className="chat__panel__group__entry__info__edit__panel">
+            hello
+          </div>
+        </button>
+        <div className="chat__panel__group__entry__info__time__stamp">
+          7:45 PM
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
@@ -46,6 +129,7 @@ export default function Dashboard() {
   const onEmojiClick = (event, emojiObject) => {
     setChosenEmoji(emojiObject);
   };
+  const onlineStatus = useOnlineStatus();
   return (
     <div className="chat">
       <div className="chat__panel">
@@ -106,12 +190,25 @@ export default function Dashboard() {
         </div>
         <div className="chat__panel__groups">
           <div className="chat__panel__groups__header">
-            <div className="chat__panel__groups__entry">Recent</div>
-            <div className="chat__panel__groups__entry">Recent</div>
-            <div className="chat__panel__groups__entry">Recent</div>
+            <button className="chat__panel__groups__entry">Recent</button>
+            <button className="chat__panel__groups__entry">Unread</button>
+            <button className="chat__panel__groups__entry">Groups</button>
           </div>
           <div className="chat__panel__group">
-            <div className="chat__panel__group__entry"></div>
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
+            <ChatPanelGroup onlineStatus={onlineStatus} />
           </div>
         </div>
       </div>
@@ -119,9 +216,11 @@ export default function Dashboard() {
         <div className="chat__screen__header">
           <div className="chat__screen__header__left">
             <div className="chat__screen__heading">{currentUser.email}</div>
-            <div className="user__status">
-              {currentUser.email ? true : false}
-            </div>
+            <div
+              className={
+                onlineStatus ? "user__status__online" : "user__status__offline"
+              }
+            ></div>
           </div>
           <button
             className="chat__screen__header__right"
@@ -144,7 +243,6 @@ export default function Dashboard() {
             timeStamp={Date()}
             imgURL={imgURL}
           />
-
           <UserMessage
             data="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit hic quibusdam voluptas ducimus ad nemo optio, qui sequi culpa, unde corrupti necessitatibus? Placeat fuga ex labore incidunt veniam laudantium!"
             timeStamp="7:47 PM"
@@ -157,7 +255,7 @@ export default function Dashboard() {
           />
           <UserMessage data="Awesome" timeStamp="7:47 PM" />
           <OtherMessage
-            data="I agree! It definitely produces a better user experience."
+            data="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit hic quibusdam voluptas ducimus ad nemo optio, qui sequi culpa, unde corrupti necessitatibus? Placeat fuga ex labore incidunt veniam laudantium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae impedit hic quibusdam voluptas ducimus ad nemo optio, qui sequi culpa, unde corrupti necessitatibus? Placeat fuga ex labore incidunt veniam laudantium!"
             name="Michael Wong"
             timeStamp={Date()}
             imgURL={imgURL}
